@@ -14,6 +14,6 @@ while startIter < endIter:
         endIter -= 1
 
 if flag:
-    print("Yes")
+    print("It is palindrom")
 else:
-    print("No")
+    print("It is not palindrom")
