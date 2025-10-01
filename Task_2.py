@@ -36,7 +36,7 @@ odd = ""
 for i in numDict.keys():
     if i % 2 == 0:
         even += str(i) + " "
-    else:
+    elif i % 1 == 0:
         odd += str(i) + " "
 
 print(f"Even numbers: {even}")
@@ -45,7 +45,7 @@ print(f"Odd numbers: {odd}")
 negative = ""
 
 for i in numDict.keys():
-    if numDict[i] < 0:
+    if i < 0:
         negative += str(i) + " "
 
 print(f"Negative numbers: {negative}")
@@ -53,7 +53,18 @@ print(f"Negative numbers: {negative}")
 floatNum = ""
 
 for i in numDict.keys():
-    if numDict[i] < 0:
+    if i % 1 != 0:
         floatNum += str(i) + " "
 
 print(f"Float numbers: {floatNum}")
+
+divisibleBy5 = ""
+
+for i in numDict.keys():
+    if i % 5 == 0:
+        divisibleBy5 += str(i) + " "
+
+print(f"Divisible by 5 numbers: {divisibleBy5}")
+
+print(f"Biggest numbers: {max(numDict.keys())}")
+print(f"Smallest numbers: {min(numDict.keys())}")
