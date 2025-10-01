@@ -18,7 +18,7 @@ unique = ""
 
 for i in numDict.keys():
     if numDict[i] == 1:
-        unique += i + " "
+        unique += str(i) + " "
 
 print(f"Unique numbers: {unique}")
 
@@ -26,7 +26,7 @@ repeating = ""
 
 for i in numDict.keys():
     if numDict[i] != 1:
-        repeating += i + " "
+        repeating += str(i) + " "
 
 print(f"Repeating numbers: {repeating}")
 
@@ -35,9 +35,17 @@ odd = ""
 
 for i in numDict.keys():
     if i % 2 == 0:
-        even += i + " "
+        even += str(i) + " "
     else:
-        odd += i + " "
+        odd += str(i) + " "
 
 print(f"Even numbers: {even}")
 print(f"Odd numbers: {odd}")
+
+negative = ""
+
+for i in numDict.keys():
+    if numDict[i] < 0:
+        negative += str(i) + " "
+
+print(f"Negative numbers: {negative}")
