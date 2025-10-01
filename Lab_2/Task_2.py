@@ -49,3 +49,11 @@ for i in numDict.keys():
         negative += str(i) + " "
 
 print(f"Negative numbers: {negative}")
+
+floatNum = ""
+
+for i in numDict.keys():
+    if numDict[i] < 0:
+        floatNum += str(i) + " "
+
+print(f"Float numbers: {floatNum}")
