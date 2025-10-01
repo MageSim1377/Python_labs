@@ -5,7 +5,10 @@ nums = numbers.split()
 numDict = {}
 
 for i in nums:
-    i = int(i)
+    if '.' in i:
+        i = float(i)    
+    else:
+        i = int(i)
     if i in numDict.keys():
         numDict[i] += 1
     else:
@@ -38,4 +41,3 @@ for i in numDict.keys():
 
 print(f"Even numbers: {even}")
 print(f"Odd numbers: {odd}")
-
