@@ -4,4 +4,4 @@ tem = float(input("Enter temperature (in kelvin): "))
 
 quantity = pres*vol/tem/8.314
 
-print(quantity)
+print(f"Quantity of gase: {quantity}")
