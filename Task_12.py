@@ -25,12 +25,14 @@ tax = sum * 0.02
 
 print("Tarif: " + f"{tarif:.2f}")
 if extraMin != 0:
-    print("Extra minutes cost: " + f"{extraMinCost:.2f}")
+    print(f"Extra minutes cost: {extraMinCost:.2f}")
 if extraSms != 0:
-    print("Extra sms cost: " + f"{extraSmsCost:.2f}")
+    print(f"Extra sms cost:{extraSmsCost:.2f}")
 if extraMb != 0:
-    print("Extra internet cost: " + f"{extraMbCost:.2f}")
+    print(f"Extra internet cost: {extraMbCost:.2f}")
 
-print("Tax: " + f"{tax:.2f}")
+print(f"Tax: {tax:.2f}")
 
-print("All: " + f"{sum + tax:.2f}")
+print(f"Extra pay: {extraMin + extraSms + extraMb}")
+
+print(f"All: {sum + tax:.2f}")
