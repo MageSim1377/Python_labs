@@ -1,17 +1,15 @@
-string = input("Enter string: ")
+ip = input("Enter IP and I in magic way will check its correctness (or no). If I wont be able to do it you can... do nothing to me! (and to programmer please:) ): ")
+
+nums = ip.split('.')
 
 flag = True
 
-if len(string) != 15:
-    flag = False
-elif string[3] != '.' or string[7] != '.' or string[11] != '.':
-    flag = False
-
-for i in range(15):
-    if i != 3 and i != 7 and i != 11 and (ord(string[i]) < ord('0') or ord(string[i]) > ord('9')):
+for i in range(len(nums)):
+    if nums[i].isdigit() and not (int(nums[i]) < 0 or int(nums[i]) > 256):
         flag = False
         break
-if flag:
-    print("It is IP")
+
+if len(nums) == 4 and flag:
+    print("It is correct IP! You are good, man")
 else:
-    print("It is not IP")
+    print("It is not correct IP. You have to think about it")
