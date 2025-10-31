@@ -14,6 +14,8 @@ for i in nums:
     else:
         numDict[i] = 1
 
+#unique = " ".join([str(i) for i in numDict.keys()])
+
 unique = ""
 
 for i in numDict.keys():
