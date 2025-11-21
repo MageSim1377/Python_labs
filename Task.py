@@ -91,3 +91,6 @@ cust1.openAccount("RAF")
 cust2.openAccount("RAF")
 cust1.income(500, "RAF")
 cust1.transfer(200, "RAF", cust2.id)
+
+while True:
+    print()
