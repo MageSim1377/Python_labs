@@ -1,12 +1,12 @@
 import datetime
 
-def log_calls(ы):
+def log_calls(filename):
     def dec(func):
         def wrapper(*args, **kwargs):
             
             result = func(*args, **kwargs)
 
-            with open(ы, "a") as file:
+            with open(filename, "a") as file:
                 file.write(f"{datetime.datetime.now()}, {func.__name__}, {args}\n")
 
             return result
