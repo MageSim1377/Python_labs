@@ -148,7 +148,7 @@ while True:
     elif choose == '9':
         for cur, acc in cust.accounts.items():
             print(f"{cur}: {acc.balance}")
-        print()1
+        print()
         
     elif choose == '10':
         with open(f"{cust.id}.txt", "w") as f:
