@@ -22,7 +22,7 @@ def generate_cake(name):
 
     return cake
 
-names = ['Красный бархат', 'Киевский', 'Очень вкусный', 'Просто вкусный', 'Повседневный']
+names = ['Красный бархат', 'Киевский', 'Очень вкусный', 'Просто вкусный']
 cakes = [generate_cake(name) for name in names]
 
 df = pd.json_normalize(cakes)
@@ -52,11 +52,12 @@ axes[0].set_title('Full realisation volume')
 
 
 data = df[['name', 'remainder']]
-axes[1].bar(
+axes[1].plot(
     data['name'],
-    data['remainder']
+    data['remainder'],
+    marker='o'
 )
-axes[1].set_title('Remainder')
+axes[1].set_title('Remainder, cakes')
 
 
 data = df[['name', 'produced', 'sold']]
@@ -66,17 +67,20 @@ axes[2].bar(
     x - w/2,
     data['produced'],
     width = w,
-    color='blue'
+    color='blue',
+    label='produced'
 )
 axes[2].bar(
     x + w/2,
     data['sold'],
     width = w,
-    color = 'red'
+    color = 'red',
+    label='sold'
 )
 axes[2].set_xticks(x)
 axes[2].set_xticklabels(data['name'])
-axes[2].set_title('Produced')
+axes[2].set_title('Produced, cakes')
+axes[2].legend(loc='best', ncols=2)
 
 
 data = df[['name', 'price_per_kg']]
