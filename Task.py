@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
 import numpy as np
 
@@ -27,16 +26,6 @@ for i in range(7):
     ax[i].bar(axData['товар'], axData['Продажи'])
     ax[i].set_xticklabels(axData['товар'], rotation=90, ha='center', fontsize=5)
     ax[i].set_title(f"Place {i + 1}", loc='center')
-    
-
-
-#axes[0].bar()
-sns.lmplot(data=df[['точка', 'Продажи', 'month']].groupby('month').agg({
-        'Продажи': 'sum',
-        'точка': 'last'
-    }).reset_index(), x='month', y='Продажи')
-
-plt.show()
 """
 
 
