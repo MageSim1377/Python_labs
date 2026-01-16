@@ -24,5 +24,8 @@ ax.add_patch(patches.Polygon([(-1.9, 0.82), (-1.3, 1.51), (0.11, 1.61), (-1.3, 1
 
 ax.add_patch(patches.Polygon([(-1.3, 1.48), (-1.25, 1.15), (-1.1, 1.0), (-1.05, 1.25)], closed=True, facecolor='#FFFFFF'))
 
+ax.add_patch(patches.Polygon([(-5.5, -1.76), (-2, -1.76), (-2, -1.86), (-5.5, -1.86)], closed=True, facecolor='#000000'))
+ax.add_patch(patches.Polygon([(-5.5, -1.76), (-2, -1.96), (-2, -2.06), (-5.5, -1.86)], closed=True, facecolor='#000000'))
+
 
 plt.show()
