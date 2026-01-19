@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 df = pd.read_excel('s7_data_sample_rev4_50k.xlsx')
 
@@ -9,8 +10,13 @@ print(df.head())
 print(df.describe())
 
 airportsData = df.groupby(['ORIG_CITY_CODE']).size().reset_index(name='count').sort_values('count', ascending=False)[:20]
-airports.bar(airportsData['ORIG_CITY_CODE'], airportsData['count'])
+airportsOtherData = df.groupby(['DEST_CITY_CODE']).size().reset_index(name='count').sort_values('count', ascending=False)[:20]
+w = 0.4
+x = np.arange(len(airportsData['ORIG_CITY_CODE']))
+airports.bar(x - w/2, airportsData['count'], width=w/2, color='red')
+airports.bar(x + w/2, airportsOtherData['count'], width=w/2, color='blue')
 airports.set_title("Most frequent airports", loc='center')
+airports.set_xticks(x, airportsData['ORIG_CITY_CODE'])
 airports.set_xticklabels(airportsData['ORIG_CITY_CODE'], rotation=90, ha='center', fontsize=10)
 
 #print(df['FLIGHT_DATE_LOC'].dtypes)
