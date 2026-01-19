@@ -36,6 +36,8 @@ students = [generateStudent() for i in range(1000)]
 
 df = pd.json_normalize(students)
 
+print(df.head(5))
+
 #pd.display(df)
 
 #with open('students.json', 'w', encoding="utf-8") as f:
@@ -47,7 +49,7 @@ print(df)
 
 plt.style.use("ggplot")
 
-fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(10, 7))
+fig, ((ax1, ax2), (ax3, ax4), (ax5, ax6)) = plt.subplots(3, 2, figsize=(10, 10))
 
 ax1.set_xlabel("Year")
 ax1.set_ylabel("Math mark")
@@ -72,6 +74,10 @@ ax4.set_ylabel("Attestat mark")
 attestat = df[["year", "attestat mark"]].groupby("year")["attestat mark"].mean()
 ax4.bar(df["year"].unique(), attestat)
 ax4.set_ylim(7, 10)
+
+data = df[['specialty', 'name']].groupby('specialty').count().reset_index()
+print(data.head(5))
+ax5.pie(data['name'], labels=data['specialty'], autopct='%1.1f%%')
 
 plt.show()
 
